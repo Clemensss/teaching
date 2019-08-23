@@ -12,7 +12,7 @@
 * Em seguida clone o repositório do projeto, através do comando git clone:
 
    ```bash
-   git clone TODO
+   git clone https://github.com/Clemensss/teaching.git
    ```
 
 * Quando o projeto for clonado, entre na pasta do download:

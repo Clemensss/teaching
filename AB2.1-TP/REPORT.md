@@ -42,7 +42,7 @@ Observando os dados obtidos nos testes, pode-se notar que o uso da UCP, em muito
     }
 ```
 
-Continuando a análise dos resultados, percebeu-se que o gráfico de uso da UCP apresenta um crescimento muito rápido nos primeiros segundos, e em seguida se mantém próximo aos 100%. Isso ocorre pelo fato do trecho de código utilizado ser um loop infinito mostrado acima), o qual monopoliza o tempo de uso do processador. Essa monopolização ocorre mesmo com o escalonamento de tarefas do sistema operacional sendo preemptivo, pois durante o laço infinito não são realizadas chamadas de sistemas que interrompam o fluxo de execução do processo, o qual se mantém sempre “pronto” para receber tempo de UCP novamente e continuar suas iterações.
+Continuando a análise dos resultados, percebeu-se que o gráfico de uso da UCP apresenta um crescimento muito rápido nos primeiros segundos, e em seguida se mantém próximo aos 100%. Isso ocorre pelo fato do trecho de código utilizado ser um loop infinito (mostrado acima), o qual monopoliza o tempo de uso do processador. Essa monopolização ocorre mesmo com o escalonamento de tarefas do sistema operacional sendo preemptivo, pois durante o laço infinito não são realizadas chamadas de sistemas que interrompam o fluxo de execução do processo, o qual se mantém sempre “pronto” para receber tempo de UCP novamente e continuar suas iterações.
 
 Entretanto, graças à política de **tempo compartilhado** aplicada pelos sistemas operacionais atuais, os outros processos continuam a receber suas fatias de tempo de UCP, então o processo pai também continua em execução e a partir dele é possível realizar uma chamada de sistema (código abaixo) para finalizar o processo filho.
 
